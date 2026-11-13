@@ -89,7 +89,8 @@ h2.display{font-size:clamp(2.6rem,6.2vw,5.6rem)}
 .hero-sub{margin-top:1.6rem}
 
 .stage{position:relative;height:min(82svh,760px);min-height:460px}
-.stage canvas{width:100%;height:100%;cursor:grab}
+.hero-photo{position:absolute;inset:4% 2% 8% 10%;width:88%;height:88%;object-fit:cover;object-position:center 32%;border-radius:28px;opacity:.52;filter:saturate(.82) contrast(1.08) brightness(.76);mask-image:linear-gradient(90deg,transparent 0%,#000 20%,#000 84%,transparent 100%),linear-gradient(0deg,transparent 0%,#000 12%,#000 92%,transparent 100%);mask-composite:intersect}
+.stage canvas{position:relative;z-index:1;width:100%;height:100%;cursor:grab}
 .stage canvas:active{cursor:grabbing}
 .hud{position:absolute;left:0;bottom:1.2rem;background:rgba(27,16,41,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--rule);border-radius:14px;padding:1rem 1.1rem;min-width:240px;font-size:.88rem}
 .hud-row{display:flex;justify-content:space-between;gap:1.5rem;padding:.3rem 0}
@@ -396,6 +397,7 @@ body::before{background:
     </div>
 
     <div class="stage after" aria-label="Interactive 3D demonstration of pose tracking">
+      <img class="hero-photo" src="/*IMG:table-tennis*/" alt="Athlete practicing a table-tennis stroke" fetchpriority="high" decoding="async">
       <canvas id="hero-canvas"></canvas>
       <div class="moves" role="group" aria-label="Choose a movement">
         <button data-move="jab" aria-pressed="true">Boxing</button>
